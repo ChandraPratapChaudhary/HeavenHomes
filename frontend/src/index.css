@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/90 backdrop-blur-xl border border-slate-700/60 shadow-2xl;
+  }
+  .glass-card {
+    @apply bg-slate-800/60 backdrop-blur-md border border-slate-700/50 hover:border-sky-400/50 transition-all duration-300;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent;
+  }
+  .gradient-btn {
+    @apply bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-medium shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition-all duration-300 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* ── Dark mode native controls (date pickers, selects) ── */
+html {
+  color-scheme: dark;
+}
+
+/* Make date-picker calendar icon visible & clickable in dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+  opacity: 1;
+  padding: 4px;
+}
+
+input[type="date"] {
+  position: relative;
+  cursor: pointer;
+}
